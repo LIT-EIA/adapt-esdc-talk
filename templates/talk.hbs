@@ -1,0 +1,49 @@
+<div class='component-inner talk-inner'>
+  {{> component this}}
+  <div class='component__widget talk__widget'>
+
+    <div class='talk__container-items' role='feed'>
+      {{#each _items }}
+      <div class="talk__chat talk__chat-character-{{_character._index}} {{#if ../hasObserver}}is-visited{{/if}} {{_classes}}"
+             role="article"
+             aria-posinset="{{@index}}"
+             tabindex="0"
+             aria-labelledby="talk__chat-container-{{@index}}"
+             aria-setsize="{{../visitedCount}}"
+             data-index="{{@index}}">
+        <div class="talk__chat-status"></div>
+        <div class="talk__chat-container" id="talk__chat-container-{{@index}}">
+          <div class="talk__chat__character {{_character._classes}}">
+            {{#if _character._graphic}}
+              {{#if _character._graphic.src}}
+                <div class="talk__character-graphic">
+                    <img src="{{_character._graphic.src}}" aria-label="{{_character._graphic.alt}}">
+                </div>
+              {{/if}}
+            {{/if}}
+            {{#if _character.name}}
+            <div class="talk__chat__character-title">
+              {{{ compile _character.name }}}
+            </div>
+            {{/if}}
+          </div>
+          <div class="talk__chat__message">
+            {{#if _graphic}}
+              {{#if _graphic.src}}
+                <div class="talk__message-graphic">
+                    <img src="{{_graphic.src}}" aria-label="{{_graphic.alt}}">
+                </div>
+              {{/if}}
+            {{/if}}
+            {{#if text}}
+              <div class="talk__chat__message-text">{{{ compile text }}}</div>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+
+  </div>
+
+</div>

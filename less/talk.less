@@ -1,15 +1,36 @@
+@adapt-primary-color: #263944; // light blue (used in most places such as buttons) & sidebar
+@adapt-secondary-color: #008055; // green (used as a secondary button)
+@adapt-tertiary-color: #fff;
+@adapt-topbar-color: #105067;
+@adapt-quaternary-color: #424343; //
+@adapt-white: #fff;
+
+@primary-color: @adapt-primary-color;
+@secondary-color: @adapt-secondary-color;
+@tertiary-color: @adapt-tertiary-color;
+@quaternary-color: @adapt-quaternary-color;
+@white: @adapt-white;
+
+@inverted-foreground-color: #fff;
+@inverted-background-color: #00aeef;
+
 .talk {
+
   &__chat {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     padding: 0.5rem 0;
     margin-bottom: 0.5rem;
-  }
-  &__chat-container {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 2000ms cubic-bezier(0.23, 1, 0.32, 1),
+      visibility 0s linear 0s;
+
+    &.is-visited {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   &__chat__character {
@@ -20,11 +41,51 @@
     justify-content: center;
   }
 
+  &__chat-container {
+    // align-items: flex-start;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  &__chat__character-title {
+    font-weight: 700;
+    font-size: 0.75rem;
+  }
+
   &__character__image-container {
+    border-radius: 50%;
+    border: 4px solid @primary-color;
+    background-color: @adapt-secondary-color;
+    margin-bottom: 0.5rem;
+    height: 80px;
     min-width: 80px;
     max-width: 80px;
   }
+
+  &__character__image {
+    border-radius: 50%;
+    padding: 0.2rem;
+  }
+
   &__chat__message {
-    padding: 0.5rem 1rem;
+    position: relative;
+    background-color: @adapt-secondary-color;
+    color: @inverted-foreground-color;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 100%;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      border-right-color: @adapt-secondary-color;
+      top: 15px;
+      left: 0;
+      margin-left: -20px;
+    }
   }
 }

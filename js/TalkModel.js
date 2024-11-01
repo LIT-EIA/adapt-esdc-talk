@@ -1,27 +1,31 @@
-import ItemModel from 'core/js/models/itemModel';
-import ComponentModel from 'core/js/models/componentModel';
+define([
+  'core/js/models/itemModel',
+  'core/js/models/componentModel'
+], function (ItemModel, ComponentModel) {
 
-export default class TalkModel extends ComponentModel {
+  var TalkModel = ComponentModel.extend({
 
-  init() {
-    this.setUpItems();
+    init: function() {
+      this.setUpItems();
+    },
 
-    super.init();
-  }
+    setUpItems: function() {
 
-  setUpItems() {
+      const items = this.get('_items') || [];
+      const characters = this.get('_characters') || [];
+      characters.forEach((character, index) => {
+        character._index = index + 1;
+      });
+      items.forEach((item, index) => {
+        item._index = index;
+        if (!item._character) return;
+        item._character = characters.filter((character) => character._index === item._character)[0];
+      });
+      this.set('_children', new Backbone.Collection(items, { model: ItemModel }));
+    }
 
-    const items = this.get('_items') || [];
-    const characters = this.get('_characters') || [];
-    characters.forEach((character, index) => {
-      character._index = index + 1;
-    });
-    items.forEach((item, index) => {
-      item._index = index;
-      if (!item._character) return;
-      item._character = characters.filter((character) => character._index === item._character)[0];
-    });
-    this.setChildren(new Backbone.Collection(items, { model: ItemModel }));
-  }
+  });
 
-}
+  return TalkModel;
+
+});

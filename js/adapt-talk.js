@@ -1,8 +1,12 @@
-import components from 'core/js/components';
-import TalkModel from './TalkModel';
-import TalkView from './TalkView';
+define([
+  'core/js/adapt',
+  './TalkModel',
+  './TalkView'
+], function (Adapt, TalkModel, TalkView) {
 
-export default components.register('talk', {
-  model: TalkModel,
-  view: TalkView
+  return Adapt.register("talk", {
+    model: TalkModel,
+    view: TalkView
+  });
+
 });
