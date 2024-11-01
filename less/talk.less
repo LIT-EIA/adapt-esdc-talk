@@ -14,6 +14,12 @@
 @inverted-foreground-color: #fff;
 @inverted-background-color: #00aeef;
 
+@esdc-cyan-text: #0068AE;
+
+#wrapper {
+  overflow: hidden;
+}
+
 .talk {
 
   &__chat {
@@ -70,22 +76,11 @@
 
   &__chat__message {
     position: relative;
-    background-color: @adapt-secondary-color;
-    color: @inverted-foreground-color;
+    background-color: @white;
+    color: @esdc-cyan-text;
     border-radius: 1rem;
+    border: 2px solid @primary-color;
     padding: 1rem;
     width: 100%;
-
-    &::after {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 0;
-      border: 10px solid transparent;
-      border-right-color: @adapt-secondary-color;
-      top: 15px;
-      left: 0;
-      margin-left: -20px;
-    }
   }
 }
