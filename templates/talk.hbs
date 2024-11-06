@@ -16,8 +16,8 @@
           <div class="talk__chat__character {{_character._classes}}">
             {{#if _character._graphic}}
               {{#if _character._graphic.src}}
-                <div class="talk__character-graphic">
-                    <img src="{{_character._graphic.src}}" aria-label="{{_character._graphic.alt}}">
+                <div class="talk__character-graphic talk__character__image-container">
+                    <img class="talk__character__image" src="{{_character._graphic.src}}" aria-label="{{_character._graphic.alt}}">
                 </div>
               {{/if}}
             {{/if}}
