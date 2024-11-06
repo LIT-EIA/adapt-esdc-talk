@@ -49,7 +49,21 @@
 						"help": "This is the character's name",
 						"translatable": true
 					},
-
+          "position": {
+            "type": "string",
+            "required": true,
+            "default": "left",
+            "title": "Select the position for the character and its text message. You can choose to display them on the left or right.",
+            "noListTitle": true,
+            "inputType": {
+              "type": "Select",
+              "options": [
+                "left",
+                "right"
+              ]
+            },
+            "validators": []
+          },
 					"_graphic": {
 						"type": "object",
 						"required": false,

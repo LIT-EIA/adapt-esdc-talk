@@ -4,7 +4,7 @@
 
     <div class='talk__container-items' role='feed'>
       {{#each _items }}
-      <div class="talk__chat talk__chat-character-{{_character._index}} {{#if ../hasObserver}}is-visited{{/if}} {{_classes}}"
+      <div class="talk__chat talk__chat-character-{{_character._index}} talk__chat__character__{{_character.position}} {{#if ../hasObserver}}is-visited{{/if}} {{_classes}}"
              role="article"
              aria-posinset="{{@index}}"
              tabindex="0"
