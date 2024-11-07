@@ -114,9 +114,9 @@
 						"required": true,
 						"default": 1,
 						"title": "Character",
-						"inputType": "Number",
+						"inputType": "SelectTalkCharacter",
 						"validators": [],
-						"help": "Enter the number that corresponds with the character. Start count from 1"
+						"help": "Select the character that will be associated with your message."
 					},
 					"text": {
 						"type": "string",

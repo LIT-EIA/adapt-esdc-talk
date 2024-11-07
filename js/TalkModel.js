@@ -19,7 +19,7 @@ define([
       items.forEach((item, index) => {
         item._index = index;
         if (!item._character) return;
-        item._character = characters.filter((character) => character._index === item._character)[0];
+        item._character = characters.filter((character) => character._index == item._character)[0];
       });
       this.set('_children', new Backbone.Collection(items, { model: ItemModel }));
     }
