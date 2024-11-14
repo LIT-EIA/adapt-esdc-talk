@@ -7,7 +7,8 @@
 		"ariaRegion": {
 			"type": "string",
 			"required": true,
-			"default": "This component is a talk.",
+			"default": "",
+      "placeholder": "This component is a talk / Ce composant est un dialogue",
 			"inputType": "Text",
 			"validators": [],
 			"translatable": true

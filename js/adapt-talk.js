@@ -1,8 +1,13 @@
 define([
   'core/js/adapt',
   './TalkModel',
-  './TalkView'
-], function (Adapt, TalkModel, TalkView) {
+  './TalkView',
+  './lang/translation'
+], function (Adapt, TalkModel, TalkView, Translation) {
+
+  Adapt.once("i18n:ready", function () {
+    Translation.loadTranslations(Adapt);
+  });
 
   return Adapt.register("talk", {
     model: TalkModel,
