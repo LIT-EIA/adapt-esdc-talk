@@ -11,6 +11,26 @@ define([
       this.hasObserver = ('IntersectionObserver' in window);
       this.visitedCount = 0;
       this.setupObserver();
+      var updatedItems = [];
+      this.model.get('_items').forEach(function(item) {
+        var graphicFlexDirection;
+        switch (item['_graphic']['position']) {
+          case 'left':
+            graphicFlexDirection = "row";
+            break;
+          case 'right':
+            graphicFlexDirection = "row-reverse";
+            break;
+          case 'bottom':
+            graphicFlexDirection = "column-reverse";
+            break;
+          default:
+            graphicFlexDirection = "column"
+        }
+        item['_graphic']['graphicFlexDirection'] = graphicFlexDirection;
+        updatedItems.push(item);
+      });
+      this.model.set('_items', updatedItems);
     },
 
     postRender: function() {
