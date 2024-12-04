@@ -181,7 +181,16 @@
               }
 						}
 					},
-
+          "_mp3": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "MP3 Link",
+            "inputType": "Asset:audio",
+            "validators": [],
+            "noListTitle": true,
+            "help": "Link to an MP3 audio"
+          },
 					"_classes": {
 						"type": "string",
 						"required": false,
