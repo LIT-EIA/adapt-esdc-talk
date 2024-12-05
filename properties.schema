@@ -119,7 +119,9 @@
 						"default": 1,
 						"title": "Character",
 						"inputType": "SelectTalkCharacter",
-						"validators": [],
+						"validators": [
+              "required"
+            ],
             "noListTitle": true,
 						"help": "Select the character that will be associated with your message."
 					},
