@@ -39,14 +39,15 @@
 				"type": "object",
 				"required": true,
 				"properties": {
-
 					"name": {
 						"type": "string",
-						"required": false,
+						"required": true,
 						"inputType": "Text",
 						"title": "Name",
 						"default": "",
-						"validators": [],
+						"validators": [
+              "required"
+            ],
 						"help": "This is the character's name",
 						"translatable": true
 					},
@@ -63,7 +64,9 @@
                 "right"
               ]
             },
-            "validators": []
+            "validators": [
+               "required"
+            ]
           },
 					"_graphic": {
 						"type": "object",
@@ -131,11 +134,13 @@
           },
 					"text": {
 						"type": "string",
-						"required": false,
+						"required": true,
 						"inputType": "TextArea",
 						"title": "Text",
 						"default": "",
-						"validators": [],
+						"validators": [
+              "required"
+            ],
 						"help": "This is the item text",
 						"translatable": true
 					},
