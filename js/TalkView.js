@@ -12,6 +12,8 @@ define([
       this.visitedCount = 0;
       this.setupObserver();
       var updatedItems = [];
+
+      if (!this.model.get('_items')) return;
       this.model.get('_items').forEach(function(item) {
         var graphicFlexDirection;
         switch (item['_graphic']['position']) {
