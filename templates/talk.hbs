@@ -22,32 +22,34 @@
                 </div>
               {{/if}}
             {{/if}}
+          </div>
+          <div class="talk__chat__message">
             {{#if _character.name}}
-            <div class="talk__chat__character-title">
+            <div class="talk__chat__character-title" style="padding: 0 1rem;">
               {{{ compile _character.name }}}
             </div>
             {{/if}}
-          </div>
-          <div class="talk__chat__message">
-            <div class="talk__chat__message-container" style="display: flex; flex-direction: {{_graphic.graphicFlexDirection}}">
-              {{#if _graphic}}
-                {{#if _graphic.src}}
-                  <div class="talk__message-graphic">
-                      <img src="{{_graphic.src}}" aria-label="{{_graphic.alt}}">
-                  </div>
+            <div class="talk__chat__message__text__audio__container">
+              <div class="talk__chat__message-container" style="display: flex; flex-direction: {{_graphic.graphicFlexDirection}}">
+                {{#if _graphic}}
+                  {{#if _graphic.src}}
+                    <div class="talk__message-graphic">
+                        <img src="{{_graphic.src}}" aria-label="{{_graphic.alt}}">
+                    </div>
+                  {{/if}}
                 {{/if}}
-              {{/if}}
-              {{#if text}}
-                <div class="talk__chat__message-text" style="padding-left: 5px; padding-right: 5px;">{{{ compile text }}}</div>
+                {{#if text}}
+                  <div class="talk__chat__message-text" style="padding-left: 5px; padding-right: 5px;">{{{ compile text }}}</div>
+                {{/if}}
+              </div>
+              {{#if _mp3}}
+                <div class="talk__message-mp3 a11y-ignore-aria">
+                  <audio controls="" style="width: 100%;">
+                    <source src="{{_mp3}}" type="audio/ogg">
+                  </audio>
+                </div>
               {{/if}}
             </div>
-            {{#if _mp3}}
-              <div class="talk__message-mp3 a11y-ignore-aria">
-                <audio controls="" style="width: 100%;">
-                  <source src="{{_mp3}}" type="audio/ogg">
-                </audio>
-              </div>
-            {{/if}}
           </div>
         </div>
       </div>
