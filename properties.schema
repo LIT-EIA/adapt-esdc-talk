@@ -132,7 +132,8 @@
             "title": "Character",
 						"default": "",
 						"validators": [],
-            "hiddenField": true
+            "hiddenField": true,
+            "realValueKey": "_character"
           },
 					"text": {
 						"type": "string",
