@@ -35,6 +35,9 @@
 			"type": "array",
 			"required": true,
 			"title": "Talk characters",
+      "asociatedItemsProperties": {
+        "name": ["_characterName"]
+      },
 			"items": {
 				"type": "object",
 				"required": true,
