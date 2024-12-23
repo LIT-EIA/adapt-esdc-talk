@@ -54,6 +54,15 @@
 						"help": "This is the character's name",
 						"translatable": true
 					},
+          "_isNarrator": {
+            "type": "boolean",
+            "required": false,
+            "default": false,
+            "title": "Is Narrator",
+            "inputType": "Checkbox",
+            "validators": [],
+            "help": "Select this checkbox if the character serves as the narrator, providing descriptions of actions and events between lines of dialogue (without a speech bubble or label)."
+          },
           "position": {
             "type": "string",
             "required": true,
