@@ -4,59 +4,59 @@
 
     <div class='talk__container-items' role='feed'>
       {{#each _items }}
-      <div class="talk__chat talk__chat-character-{{_character._index}} {{#if _character._isNarrator}}talk__chat__narrator{{/if}} {{#unless _character._isNarrator}}talk__chat__character__{{_character.position}}{{/unless}} {{#if ../hasObserver}}is-visited{{/if}} {{_classes}}"
-             role="article"
-             aria-posinset="{{@index}}"
-             tabindex="0"
-             aria-labelledby="talk__chat-container-{{@index}}"
-             aria-setsize="{{../visitedCount}}"
-             data-index="{{@index}}">
-        <div class="talk__chat-status"></div>
-        <div class="talk__chat-container" id="talk__chat-container-{{@index}}">
-          {{#unless _character._isNarrator }}
+      <div class="talk__chat__wrapper {{_character.position}}">
+        {{#if _character.name}}
+        <div class="talk__chat__character-title" style="padding: 0 1rem;">
+          {{{ compile _character.name }}}
+        </div>
+        {{/if}}
+        <div
+          class="talk__chat talk__chat-character-{{_character._index}} {{#if _character._isNarrator}}talk__chat__narrator{{/if}} {{#unless _character._isNarrator}}talk__chat__character__{{_character.position}}{{/unless}} {{#if ../hasObserver}}is-visited{{/if}} {{_classes}}"
+          role="article" aria-posinset="{{@index}}" tabindex="0" aria-labelledby="talk__chat-container-{{@index}}"
+          aria-setsize="{{../visitedCount}}" data-index="{{@index}}">
+          <div class="talk__chat-status"></div>
+          <div class="talk__chat-container" id="talk__chat-container-{{@index}}">
+            {{#unless _character._isNarrator }}
             <div class="talk__chat__character {{_character._classes}}">
               {{#if _character._graphic}}
-                {{#if _character._graphic.src}}
-                  <div class="talk__character-graphic talk__character__image-container"
-                    style="background-image: url('{{_character._graphic.src}}'); background-size: cover; background-position: center;"
-                  >
-                  </div>
-                {{/if}}
+              {{#if _character._graphic.src}}
+              <div class="talk__character-graphic talk__character__image-container"
+                style="background-image: url('{{_character._graphic.src}}'); background-size: cover; background-position: center;">
+              </div>
+              {{/if}}
               {{/if}}
             </div>
             <div class="talk__chat__message">
-              {{#if _character.name}}
-              <div class="talk__chat__character-title" style="padding: 0 1rem;">
-                {{{ compile _character.name }}}
-              </div>
-              {{/if}}
               <div class="talk__chat__message__text__audio__container">
-                <div class="talk__chat__message-container" style="display: flex; flex-direction: {{_graphic.graphicFlexDirection}}">
+                <div class="talk__chat__message-container"
+                  style="display: flex; flex-direction: {{_graphic.graphicFlexDirection}}">
                   {{#if _graphic}}
-                    {{#if _graphic.src}}
-                      <div class="talk__message-graphic">
-                          <img src="{{_graphic.src}}" aria-label="{{_graphic.alt}}">
-                      </div>
-                    {{/if}}
+                  {{#if _graphic.src}}
+                  <div class="talk__message-graphic">
+                    <img src="{{_graphic.src}}" aria-label="{{_graphic.alt}}">
+                  </div>
+                  {{/if}}
                   {{/if}}
                   {{#if text}}
-                    <div class="talk__chat__message-text" style="padding-left: 5px; padding-right: 5px;">{{{ compile text }}}</div>
+                  <div class="talk__chat__message-text" style="padding-left: 5px; padding-right: 5px;">{{{ compile text
+                    }}}</div>
                   {{/if}}
                 </div>
                 {{#if _mp3}}
-                  <div class="talk__message-mp3 a11y-ignore-aria">
-                    <audio controls="" style="width: 100%;">
-                      <source src="{{_mp3}}" type="audio/ogg">
-                    </audio>
-                  </div>
+                <div class="talk__message-mp3 a11y-ignore-aria">
+                  <audio controls="" style="width: 100%;">
+                    <source src="{{_mp3}}" type="audio/ogg">
+                  </audio>
+                </div>
                 {{/if}}
               </div>
             </div>
-          {{else}}
+            {{else}}
             {{#if text}}
-              <div class="talk__chat__message-narratortext">{{{ compile text }}}</div>
+            <div class="talk__chat__message-narratortext">{{{ compile text }}}</div>
             {{/if}}
-          {{/unless}}
+            {{/unless}}
+          </div>
         </div>
       </div>
       {{/each}}
