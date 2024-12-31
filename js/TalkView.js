@@ -37,7 +37,7 @@ define([
 
     postRender: function() {
       const self = this;
-      this.$('.talk__chat').each(function(index, element) {
+      this.$('.talk__chat__wrapper').each(function(index, element) {
         if (self.hasObserver) {
           self.observer.observe(element);
         } else {
