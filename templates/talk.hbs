@@ -5,11 +5,13 @@
     <div class='talk__container-items' role='feed'>
       {{#each _items }}
       <div class="talk__chat__wrapper {{_character.position}}">
-        {{#if _character.name}}
-        <div class="talk__chat__character-title" style="padding: 0 1rem;">
-          {{{ compile _character.name }}}
-        </div>
-        {{/if}}
+        {{#unless _character._isNarrator }}
+          {{#if _character.name}}
+          <div class="talk__chat__character-title" style="padding: 0 1rem;">
+            {{{ compile _character.name }}}
+          </div>
+          {{/if}}
+        {{/unless}}
         <div
           class="talk__chat talk__chat-character-{{_character._index}} {{#if _character._isNarrator}}talk__chat__narrator{{/if}} {{#unless _character._isNarrator}}talk__chat__character__{{_character.position}}{{/unless}} {{#if ../hasObserver}}is-visited{{/if}} {{_classes}}"
           role="article" aria-posinset="{{@index}}" tabindex="0" aria-labelledby="talk__chat-container-{{@index}}"
