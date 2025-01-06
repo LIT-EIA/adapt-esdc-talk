@@ -30,8 +30,17 @@ define([
             graphicFlexDirection = "column"
         }
         item['_graphic']['graphicFlexDirection'] = graphicFlexDirection;
+
+        if (!item['_character'] && ['Narrator', 'Narrateur'].includes(item['_characterName'])) {
+          item['_character'] = {
+            _isNarrator: true,
+            _index: 0
+          }
+        }
+
         updatedItems.push(item);
       });
+      console.log('updatedItems: ', updatedItems);
       this.model.set('_items', updatedItems);
     },
 
