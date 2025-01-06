@@ -46,6 +46,17 @@
 
     &__narrator {
       justify-content: center !important;
+      margin: 0;
+      padding: 0;
+      .talk__chat-container {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+      }
+      &_wrapper {
+        display: inline-block!important;
+        width: 100%!important;
+      }
     }
   }
 
@@ -152,7 +163,7 @@
     transform: translateY(100px);
     transition: all 2000ms cubic-bezier(0.23, 1, 0.32, 1),
       visibility 0s linear 0s;
-  
+
     &.is-visited {
       opacity: 1;
       transform: translateY(0);
@@ -207,6 +218,13 @@
     p {
       margin-top: 8px;
       margin-bottom: 8px;
+    }
+  }
+
+  &__chat__message-narratortext {
+    p {
+      margin-left: 1rem;
+      margin-right: 1rem;
     }
   }
 

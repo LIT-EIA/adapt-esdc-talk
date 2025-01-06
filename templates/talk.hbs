@@ -4,7 +4,7 @@
 
     <div class='talk__container-items' role='feed'>
       {{#each _items }}
-      <div class="talk__chat__wrapper {{_character.position}}">
+      <div class="talk__chat__wrapper {{_character.position}}{{#if _character._isNarrator}} talk__chat__narrator_wrapper{{/if}}">
         {{#unless _character._isNarrator }}
           {{#if _character.name}}
           <div class="talk__chat__character-title" style="padding: 0 1rem;">
@@ -13,7 +13,7 @@
           {{/if}}
         {{/unless}}
         <div
-          class="talk__chat talk__chat-character-{{_character._index}} {{#if _character._isNarrator}}talk__chat__narrator{{/if}} {{#unless _character._isNarrator}}talk__chat__character__{{_character.position}}{{/unless}} {{#if ../hasObserver}}is-visited{{/if}} {{_classes}}"
+          class="talk__chat talk__chat-character-{{_character._index}}{{_classes}}{{#if _character._isNarrator}} talk__chat__narrator{{/if}}{{#unless _character._isNarrator}} talk__chat__character__{{_character.position}}{{/unless}}{{#if ../hasObserver}} is-visited{{/if}}"
           role="article" aria-posinset="{{@index}}" tabindex="0" aria-labelledby="talk__chat-container-{{@index}}"
           aria-setsize="{{../visitedCount}}" data-index="{{@index}}">
           <div class="talk__chat-status"></div>
