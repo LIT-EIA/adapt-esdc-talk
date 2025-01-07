@@ -163,15 +163,7 @@
 								"default": "",
 								"inputType": "Asset:image",
 								"validators": [],
-								"help": "The image for the item",
-                "conditions": {
-                  "and": [
-                    {
-                      "name": "_characterName",
-                      "!value": "Narrator,Narrateur"
-                    }
-                  ]
-                }
+								"help": "The image for the item"
 							},
 							"alt": {
 								"type": "string",
@@ -199,7 +191,16 @@
                 },
                 "validators": []
               }
-						}
+						},
+            "conditions": {
+              "and": [
+                {
+                  "name": "_character",
+                  "id": "_selectTalkCharacter",
+                  "!value": "0"
+                }
+              ]
+            }
 					},
           "_mp3": {
             "type": "string",
@@ -213,8 +214,9 @@
             "conditions": {
               "and": [
                 {
-                  "name": "_characterName",
-                  "!value": "Narrator,Narrateur"
+                  "name": "_character",
+                  "id": "_selectTalkCharacter",
+                  "!value": "0"
                 }
               ]
             }
