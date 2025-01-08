@@ -4,13 +4,14 @@
 
     <div class='talk__container-items' role='feed'>
       {{#each _items }}
-      <div class="talk__chat__wrapper {{_character.position}}{{#if _character._isNarrator}} talk__chat__narrator_wrapper{{/if}}">
+      <div
+        class="talk__chat__wrapper {{_character.position}}{{#if _character._isNarrator}} talk__chat__narrator_wrapper{{/if}}">
         {{#unless _character._isNarrator }}
-          {{#if _character.name}}
-          <div class="talk__chat__character-title" style="padding: 0 1rem;">
-            {{{ compile _character.name }}}
-          </div>
-          {{/if}}
+        {{#if _character.name}}
+        <div class="talk__chat__character-title{{#if _character._graphic.src}} talk__chat__character-titlespacing{{/if}}" style="padding: 0 1rem;">
+          {{{ compile _character.name }}}
+        </div>
+        {{/if}}
         {{/unless}}
         <div
           class="talk__chat talk__chat-character-{{_character._index}}{{_classes}}{{#if _character._isNarrator}} talk__chat__narrator{{/if}}{{#unless _character._isNarrator}} talk__chat__character__{{_character.position}}{{/unless}}{{#if ../hasObserver}} is-visited{{/if}}"
@@ -19,17 +20,17 @@
           <div class="talk__chat-status"></div>
           <div class="talk__chat-container" id="talk__chat-container-{{@index}}">
             {{#unless _character._isNarrator }}
+            {{#if _character._graphic}}
+            {{#if _character._graphic.src}}
             <div class="talk__chat__character {{_character._classes}}">
-              {{#if _character._graphic}}
-              {{#if _character._graphic.src}}
               <div class="talk__character-graphic talk__character__image-container"
                 style="background-image: url('{{_character._graphic.src}}'); background-size: cover; background-position: center;">
               </div>
-              {{/if}}
-              {{/if}}
             </div>
+            {{/if}}
+            {{/if}}
             <div class="talk__chat__message">
-              <div class="talk__chat__message__text__audio__container">
+              <div class="talk__chat__message__text__audio__container{{#unless _character._graphic.src}} talk__chat__message-noavatar{{/unless}}">
                 <div class="talk__chat__message-container"
                   style="display: flex; flex-direction: {{_graphic.graphicFlexDirection}}">
                   {{#if _graphic}}

@@ -42,7 +42,7 @@
         min-width: 12%;
     }
 
-    .talk__chat__wrapper.left .talk__chat__character-title {
+    .talk__chat__wrapper.left .talk__chat__character-titlespacing {
         margin-left: calc(12% + 2rem);
     }
 }
@@ -190,7 +190,7 @@
         }
 
         &.left {
-            .talk__chat__character-title {
+            .talk__chat__character-titlespacing {
                 margin-left: calc(18% + 2rem);
             }
         }
@@ -244,6 +244,10 @@
         }
     }
 
+    &__chat__message-noavatar::after {
+       display: none;
+    }
+
     &__message-graphic {
         img {
             margin: 16px 0;
@@ -269,7 +273,7 @@
             width: 100%;
 
             &.left {
-                .talk__chat__character-title {
+                .talk__chat__character-titlespacing {
                     margin-left: calc(12% + 2rem);
                 }
             }
