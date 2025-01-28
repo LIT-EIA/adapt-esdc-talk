@@ -57,7 +57,9 @@
             </div>
             {{else}}
             {{#if text}}
-            <div class="talk__chat__message-narratortext">{{{ compile text }}}</div>
+            <div class="talk__chat__message-narratortext">
+              <span class="sr-only">{{t 'adapt-talk-narration'}}</span>{{{ compile text }}}
+            </div>
             {{/if}}
             {{/unless}}
           </div>

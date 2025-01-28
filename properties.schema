@@ -22,6 +22,16 @@
       "validators": [],
       "placeholder": "Optional: Listen to the audio player for more details. / Optionnel : Écoutez le lecteur audio pour plus de détails.",
       "translatable": true
+    },
+    "narration": {
+      "title": "Narration",
+      "type": "string",
+      "required": false,
+      "default": "",
+      "inputType": "Text",
+      "validators": [],
+      "placeholder": "Narration",
+      "translatable": true
     }
 	},
 	"properties": {
