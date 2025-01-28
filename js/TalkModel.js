@@ -1,7 +1,8 @@
 define([
+  'core/js/adapt',
   'core/js/models/itemModel',
   'core/js/models/componentModel'
-], function (ItemModel, ComponentModel) {
+], function (Adapt, ItemModel, ComponentModel) {
 
   var TalkModel = ComponentModel.extend({
 

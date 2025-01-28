@@ -1,6 +1,7 @@
 define([
+  'core/js/adapt',
   'core/js/views/componentView'
-], function (ComponentView) {
+], function (Adapt, ComponentView) {
 
   var TalkView = ComponentView.extend({
 
