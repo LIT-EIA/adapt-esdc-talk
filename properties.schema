@@ -20,7 +20,7 @@
       "default": "",
       "inputType": "Text",
       "validators": [],
-      "placeholder": "Optional: Listen to the audio player for more details. / Optionnel : Écoutez le lecteur audio pour plus de détails.",
+      "placeholder": "Optional audio version of this text / Version audio optionnelle de ce texte",
       "translatable": true
     },
     "narration": {
