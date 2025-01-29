@@ -1,71 +1,58 @@
 # adapt-talk
- **talk** is a presentation component. You can see it [here](https://adaptlearning-no-core.web.app/#/id/po-55)
+ **Talk** is a *presentation component* for Adapt.
 
+The talk component  simulates conversation "Chat Like" conversation between characters displaying avatars  and messages in speech bubbles.  It can include images of documents or screen shots and audio files. 
+
+## Installation
+
+To install the Adapt Guided Tour Component in the Adapt framework, run the following command from the command line:
+
+```sh
+adapt install adapt-esdc-tour
+```
+
+To install the plugin to the Authoring Tool, follow these steps:
+
+1. **Download the Plugin**: Obtain the plugin from the GitHub repository or another source.
+2. **Upload to Authoring Tool**: Use the Adapt authoring tool\'s Plug-in Manager to upload and install the plugin.
+ 
 ## Settings Overview
-The attributes listed below are used in components.json and are properly formatted as JSON in  [*example.json*](https://github.com/nachocinalli/adapt-talk/blob/master/example.json).
+Below are the attributes used in `components.json` to configure the Adapt Talk Component
 
-## Adding basic CSS style
+### Global Settings
 
-```
-.talk {
-  &__chat-container {
-    align-items: flex-start;
-  }
-  &__chat__character-title {
-    font-weight: 700;
-    font-size: 0.75rem;
-  }
-  &__character__image-container {
-    border-radius: 50%;
-    border: 4px solid @item-color;
-    background-color: @item-color-inverted;
-    margin-bottom: 0.5rem;
-    height: 80px;
-  }
-  &__character__image {
-    border-radius: 50%;
-    padding: 0.2rem;
-  }
-  &__chat__message {
-    position: relative;
-    background-color: @item-color;
-    color: @item-color-inverted;
-    border-radius: 1rem;
-    padding: 1rem;
-    width: 100%;
-    &::after {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 0;
-      border: 10px solid transparent;
-      border-right-color: @item-color;
-      top: 15px;
-      left: 0;
-      margin-left: -20px;
-    }
-  }
-  &__chat {
-    opacity: 0;
-    transform: translateY(100px);
-    transition: all 2000ms cubic-bezier(0.23, 1, 0.32, 1),
-      visibility 0s linear 0s;
-    &.is-visited {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-}
+- **ariaRegion (string)**: The default ARIA label for the talk. It provides context for screen reader users.
+- **optionalAudioPlayerMessage (string)**: Label for the optional audio version of the talk message. It provides context for screen reader users.
+- **narration (string)**: Label for the narration in the talk. It provides context for screen reader users.
 
-```
-## Limitations
+### Properties
 
-No known limitations.
+- **_supportedLayout (string)**: Defines the supported layout for the component.
+- **instruction (string)**: Optional text that appears above the component, often used to guide the learner’s interaction with the component.
+  
+### _characters (array)
+
+Each entry in the array represents a talk character and should contain the following properties:
+
+- **name (string)**: This is the character's name.
+- **position (string)**: This is the position for the character and its text message. You can choose to display them on the left or right.
+- **_graphic (object)**: Path to the avatar for the talk character.
+  - src: Source of the image to be displayed
+  - alt: Alternative text for the image displayed behind the step.
+- **classes (string)**: Classes that are applied to the character, enabling the application of custom CSS styling linked to those class names.
+
+### _items (array)
+
+Each entry in the array represents a talk message and should contain the following properties:
+
+- **_character (number)**: The index number of the character in the characters array linked to the talk message.
+- **_characterName (string)**: This is the name of the talk character linked to the talk message.
+- **text (string)**: This is the talk message text.
+- **_graphic (object)**: Path to the image included in the talk message content.
+  - src: Source of the image to be displayed
+  - alt: Alternative text for the image displayed behind the step.
+- **_mp3 (string)**: Path to the mp3 audio file that aligns with the text content in the talk message.
+- **classes (string)**: Classes that are applied to the talk message, enabling the application of custom CSS styling linked to those class names.
 
 ----------------------------
-**Version number:**  1.2.0  
-**Framework versions:** 5.14.0+  
-**Author / maintainer:** [Ignacio Cinalli] (https://github.com/nachocinalli)  
-**Accessibility support:** 
-**RTL support:**   
-**Cross-platform coverage:** 
+Requires framework >=4.4.1
