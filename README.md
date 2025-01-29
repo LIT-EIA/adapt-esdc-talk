@@ -1,4 +1,4 @@
-# adapt-talk
+# adapt-esdc-talk
  **Talk** is a *presentation component* for Adapt.
 
 The talk component  simulates conversation "Chat Like" conversation between characters displaying avatars  and messages in speech bubbles.  It can include images of documents or screen shots and audio files. 
