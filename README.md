@@ -5,10 +5,10 @@ The talk component  simulates conversation "Chat Like" conversation between char
 
 ## Installation
 
-To install the Adapt Guided Tour Component in the Adapt framework, run the following command from the command line:
+To install the Adapt Talk Component in the Adapt framework, run the following command from the command line:
 
 ```sh
-adapt install adapt-esdc-tour
+adapt install adapt-esdc-talk
 ```
 
 To install the plugin to the Authoring Tool, follow these steps:
