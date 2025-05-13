@@ -10,6 +10,7 @@
         {{#if _character.name}}
         <div class="talk__chat__character-title{{#if _character._graphic.src}} talk__chat__character-titlespacing{{/if}}" style="padding: 0 1rem;">
           {{{ compile _character.name }}}
+          <span class="sr-only">{{t 'adapt-talk-says'}}</span>
         </div>
         {{/if}}
         {{/unless}}
