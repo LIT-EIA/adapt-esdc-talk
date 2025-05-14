@@ -41,7 +41,6 @@ define([
 
         updatedItems.push(item);
       });
-      console.log('updatedItems: ', updatedItems);
       this.model.set('_items', updatedItems);
     },
 
