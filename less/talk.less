@@ -33,9 +33,8 @@
     }
 
     .talk__character__image-container {
-        height: 50px;
         min-width: 50px;
-        max-width: 50px;
+        aspect-ratio: 1;
     }
 
     .talk__chat__character {
@@ -83,7 +82,14 @@
         align-items: center;
         justify-content: center;
         min-width: 18%;
-        max-width: 18%;
+
+        &.medium {
+          min-width: 23%;
+        }
+
+        &.large {
+          min-width: 30%;
+        }
 
         &__right {
             justify-content: flex-end;
@@ -223,9 +229,8 @@
         border-radius: 50%;
         border: 4px solid @default-message-background;
         background-color: @white;
-        height: 80px;
-        min-width: 80px;
-        max-width: 80px;
+        min-width: 100%;
+        aspect-ratio: 1;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -268,13 +273,12 @@
 
     @media (max-width: 47.5rem) {
         &__character__image-container {
-            height: 50px;
             min-width: 50px;
-            max-width: 50px;
+            aspect-ratio: 1;
         }
 
         &__chat__character {
-            min-width: 12%;
+            min-width: 12% !important;
         }
 
         &__chat-container {

@@ -115,7 +115,24 @@
 							}
 						}
 					},
-
+          "_size": {
+            "type": "string",
+            "required": true,
+            "default": "default",
+            "title": "Size",
+            "help": "Select the size for the character avatar.",
+            "inputType": {
+              "type": "Select",
+              "options": [
+                "default",
+                "medium",
+                "large"
+              ]
+            },
+            "validators": [
+               "required"
+            ]
+          },
 					"_classes": {
 						"type": "string",
 						"required": false,

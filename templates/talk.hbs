@@ -23,8 +23,8 @@
             {{#unless _character._isNarrator }}
             {{#if _character._graphic}}
             {{#if _character._graphic.src}}
-            <div class="talk__chat__character {{_character._classes}}">
-              <div class="talk__character-graphic talk__character__image-container"
+            <div class="talk__chat__character {{_character._classes}} {{_character._size}}">
+              <div class="talk__character-graphic talk__character__image-container {{_character._classes}} {{_character._size}}"
                 style="background-image: url('{{_character._graphic.src}}'); background-size: cover; background-position: center;">
               </div>
             </div>
